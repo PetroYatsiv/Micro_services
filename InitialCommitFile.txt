@@ -14,3 +14,50 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+--build docker image
+docker build -t petroyatsiv/platformservice .
+
+--run
+docker run -p 8080:80 -d petroyatsiv/platformservice
+
+--get containers (319c3a36118c - CONTAINER ID)
+docker ps
+
+--stop docker container
+docker stop 319c3a36118c
+
+--start docker container by CONTAINER ID
+docker start e7bcc9c3ff00
+
+--kubernetes version
+kubectl version
+
+--apply 
+kubectl apply -f platforms-depl.yaml
+
+--
+kubectl get deployments
+
+--
+kubectl get pods
+
+--delete deployments by "platforms-depl" yaml file.
+kubectl delete deployment platforms-depl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
