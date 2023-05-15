@@ -36,17 +36,20 @@ kubectl version
 --apply 
 kubectl apply -f platforms-depl.yaml
 
---
+--get deployments
 kubectl get deployments
 
---
+--get pods
 kubectl get pods
 
 --delete deployments by "platforms-depl" yaml file.
 kubectl delete deployment platforms-depl
 
+--apply node port service
+kubectl apply -f platforms-np-srv.yaml
 
-
+--get services to see
+kubectl get services
 
 
 
