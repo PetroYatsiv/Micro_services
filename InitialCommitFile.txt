@@ -52,6 +52,20 @@ kubectl apply -f platforms-np-srv.yaml
 --get services to see
 kubectl get services
 
+--restart with the latest docker image 
+kubectl rollout restart deployment platforms-depl
+
+--get kubernetes namespace
+kubectl get namespace
+
+--get pods by namespace
+kubectl get pods --namespace=ingress-nginx
+
+--get services by namespace
+kubectl get services --namespace=ingress-nginx
+
+--get services by all namespaces
+kubectl get services --all-namespaces -o wide
 
 
 
