@@ -17,6 +17,7 @@ dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
 
 --build docker image
 docker build -t petroyatsiv/platformservice .
+docker build -t petroyatsiv/commandservice .
 
 --run
 docker run -p 8080:80 -d petroyatsiv/platformservice
