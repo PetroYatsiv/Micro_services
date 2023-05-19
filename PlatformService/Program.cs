@@ -8,10 +8,19 @@ internal class Program
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        
-        // Add services to the container.
-        builder.Services.AddDbContext<PlatformService.Data.AppDbContext>(opt =>
+        if (builder.Environment.IsProduction())
+        {
+            Console.WriteLine("--> using SQL server db");
+            builder.Services.AddDbContext<AppDbContext>(opt =>
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+        }
+        else
+        {
+            Console.WriteLine("--> using in memory db");
+            builder.Services.AddDbContext<AppDbContext>(opt =>
             opt.UseInMemoryDatabase("inMemory"));
+        }
+     
         builder.Services.AddTransient<IPlatformRepo, PlatformRepo>();
         PrepDb.PreparateDb(builder);
         builder.Services.AddControllers();
@@ -24,7 +33,7 @@ internal class Program
         builder.Services.AddAutoMapper(typeof(PlatformsProfile));
         var app = builder.Build();
         Console.WriteLine($" -->  Command Service endpoint:  {app.Configuration["CommandService"]}");
-
+        
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {

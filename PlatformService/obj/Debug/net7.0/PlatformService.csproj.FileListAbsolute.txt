@@ -77,3 +77,4 @@ C:\LEARN_PROJECTS\MICRO_SERVICES\PlatformService\obj\Debug\net7.0\refint\Platfor
 C:\LEARN_PROJECTS\MICRO_SERVICES\PlatformService\obj\Debug\net7.0\PlatformService.pdb
 C:\LEARN_PROJECTS\MICRO_SERVICES\PlatformService\obj\Debug\net7.0\PlatformService.genruntimeconfig.cache
 C:\LEARN_PROJECTS\MICRO_SERVICES\PlatformService\obj\Debug\net7.0\ref\PlatformService.dll
+C:\LEARN_PROJECTS\MICRO_SERVICES\PlatformService\bin\Debug\net7.0\appsettings.Production.json

@@ -67,6 +67,15 @@ kubectl get services --namespace=ingress-nginx
 --get services by all namespaces
 kubectl get services --all-namespaces -o wide
 
+--get storage class 
+kubectl get storageclass
+
+--get pvc (pvc - persistance volume claim)
+kubectl get pvc
+
+--secret/mssql
+kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!"
+
 
 
 
